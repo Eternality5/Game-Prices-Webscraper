@@ -15,7 +15,7 @@ router.get('/scraper', async (req, res) => {
   game = req.query.game;
 
 
-  // Humble Bundle
+  // Humble
   try {
     await page.goto('https://www.humblebundle.com/store/search?sort=bestselling&search=' + game);
     el = await page.$('.entity-link');
