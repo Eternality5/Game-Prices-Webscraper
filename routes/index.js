@@ -14,7 +14,6 @@ router.get('/scraper', async (req, res) => {
 
   game = req.query.game;
 
-
   // Humble
   try {
     await page.goto('https://www.humblebundle.com/store/search?sort=bestselling&search=' + game);
@@ -58,9 +57,8 @@ router.get('/scraper', async (req, res) => {
     steam = ("Failed to scrape :(");
   }
 
-
   await browser.close();
-  // Responce
+  // Response
   res.render('terraria', {humble: humble, steam: steam, title: 'Scape for ' + game});
 })
 
